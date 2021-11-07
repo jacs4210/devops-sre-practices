@@ -2,3 +2,7 @@
 *.jpg
 *.png
 *.webp
+*.rsa
+*.pub
+*.pdf
+resources
