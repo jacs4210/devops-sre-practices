@@ -1,0 +1,38 @@
+FROM python:3.10.4-alpine
+
+# Variables
+ENV USER_GROUP_SYS contconf
+ENV HOME /home/${USER_GROUP_SYS}
+ENV ROOT root
+
+# Se crea usuario no root.
+RUN addgroup -S ${USER_GROUP_SYS} && adduser -S ${USER_GROUP_SYS} -G ${USER_GROUP_SYS}
+
+# Descarga de dependencias para instalar ansible en versión de alpine
+RUN apk update && apk add --no-cache musl-dev libffi-dev make gcc
+
+# Se define el espacio de trabajo
+WORKDIR ${HOME}
+
+# Se copia el archivo requerido para instalar pip
+COPY get-pip.py .
+
+# Se dan permisos sobre el archivo para instalar pip
+RUN chown ${USER_GROUP_SYS}:${USER_GROUP_SYS} get-pip.py
+
+# Se cambia al usuario creado anteriormente
+USER ${USER_GROUP_SYS}
+
+# Instalación de pip y de Ansible con pip.
+RUN python3 get-pip.py --user && pip install --user cffi && pip install --user ansible
+
+USER ${ROOT}
+
+# Se crea enlace simbolico para la ejecución de ansible.
+RUN cd /usr/bin && ln -s ~/.local/bin/ansible ansible
+
+# Se cambia al usuario no-root del sistema.
+USER ${USER_GROUP_SYS}
+
+# Se corre proceso principal.
+CMD ["tail", "-f", "/dev/null"]
