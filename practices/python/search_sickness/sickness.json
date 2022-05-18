@@ -1,0 +1,147 @@
+{
+    "symptoms": [
+        "dolor de cabeza",
+        "fiebre",
+        "malestar general",
+        "dolor muscular",
+        "congestion nasal",
+        "dolor de garganta",
+        "tos",
+        "mal aliento",
+        "dolor en la cara",
+        "dolor en el pecho",
+        "fatiga",
+        "mucosidad",
+        "dolor de oido",
+        "nerviosismo",
+        "dificultad para dormir",
+        "ardor al orinar",
+        "orinar con frecuencia",
+        "sangre en la orina",
+        "dolor de estomago",
+        "hinchazon",
+        "gases",
+        "nauseas",
+        "sarpullido",
+        "dolor en los ojos",
+        "diarrea",
+        "vomito",
+        "hematomas",
+        "sequedad",
+        "ganglios inflamados",
+        "erupciones cutaneas",
+        "dolor en la parte superior del abdomen",
+        "nauseas",
+        "inapetencia",
+        "adelgazamiento"
+    ],
+    "sickness": [
+        {
+            "id": 1,
+            "name": "gripe",
+            "symptoms": [
+                "dolor de cabeza",
+                "fiebre",
+                "malestar general",
+                "dolor muscular"
+            ]
+        },
+        {
+            "id": 2,
+            "name": "sinusitis",
+            "symptoms": [
+                "dolor de cabeza",
+                "congestion nasal",
+                "dolor de garganta",
+                "tos",
+                "mal aliento",
+                "dolor en la cara"
+            ]
+        },
+        {
+            "id": 3,
+            "name": "bronquitis aguda",
+            "symptoms": [
+                "dolor de cabeza",
+                "dolor de garganta",
+                "tos",
+                "dolor en el pecho",
+                "fatiga",
+                "mucosidad"
+            ]
+        },
+        {
+            "id": 4,
+            "name": "infeccion de oido",
+            "symptoms": [
+                "dolor de oido",
+                "fiebre",
+                "nerviosismo",
+                "dificultad para dormir"
+            ]
+        },
+        {
+            "id": 5,
+            "name": "infeccion urinaria",
+            "symptoms": [
+                "ardor al orinar",
+                "orinar con frecuencia",
+                "sangre en la orina"
+            ]
+        },
+        {
+            "id": 6,
+            "name": "dispepsia",
+            "symptoms": [
+                "dolor de estomago",
+                "hinchazon",
+                "gases"
+            ]
+        },
+        {
+            "id": 7,
+            "name": "dengue",
+            "symptoms": [
+                "fiebre",
+                "nauseas",
+                "sarpullido",
+                "dolor en los ojos",
+                "dolor muscular"
+            ]
+        },
+        {
+            "id": 8,
+            "name": "ebola",
+            "symptoms": [
+                "fiebre",
+                "dolor de cabeza",
+                "dolor de estomago",
+                "dolor muscular",
+                "diarrea",
+                "vomito",
+                "hematomas"
+            ]
+        },
+        {
+            "id": 9,
+            "name": "faringitis",
+            "symptoms": [
+                "fiebre",
+                "dolor de cabeza",
+                "sequedad",
+                "ganglios inflamados",
+                "erupciones cutaneas"
+            ]
+        },
+        {
+            "id": 10,
+            "name": "gastritis",
+            "symptoms": [
+                "dolor en la parte superior del abdomen",
+                "nauseas",
+                "inapetencia",
+                "adelgazamiento"
+            ]
+        }
+    ]
+}
