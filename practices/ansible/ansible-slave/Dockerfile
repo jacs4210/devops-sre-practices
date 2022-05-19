@@ -1,14 +1,14 @@
-FROM alpine:3.15.4
+FROM python:3.10.4-alpine3.15
 
 # Variables
-ENV US_GR_ANSIBLE contconf
-ENV HOME /home/${US_GR_ANSIBLE}
+ARG US_GR_ANSIBLE=contconf
+ARG HOME=/home/${US_GR_ANSIBLE}
 
 # Se crea usuario no root.
 RUN addgroup -S ${US_GR_ANSIBLE} && adduser -S ${US_GR_ANSIBLE} -G ${US_GR_ANSIBLE}
 
-# Se instala ansible y OpenSSH.
-RUN apk update && apk upgrade && apk add --no-cache ansible openssh
+# Se instala el cliente openssh.
+RUN apk update && apk upgrade && apk add --no-cache openssh
 
 # Se define el espacio de trabajo
 WORKDIR ${HOME}

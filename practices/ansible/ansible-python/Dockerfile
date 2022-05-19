@@ -1,9 +1,9 @@
-FROM python:3.10.4-alpine
+FROM python:3.10.4-alpine3.15
 
 # Variables
-ENV US_GR_ANSIBLE contconf
-ENV HOME /home/${US_GR_ANSIBLE}
-ENV ROOT root
+ARG US_GR_ANSIBLE=contconf
+ARG HOME=/home/${US_GR_ANSIBLE}
+ARG ROOT=root
 
 # Se crea usuario no root.
 RUN addgroup -S ${US_GR_ANSIBLE} && adduser -S ${US_GR_ANSIBLE} -G ${US_GR_ANSIBLE}
@@ -33,6 +33,9 @@ RUN cd /usr/bin && ln -s ~/.local/bin/ansible ansible
 
 # Se cambia al usuario no-root del sistema.
 USER ${US_GR_ANSIBLE}
+
+# Se crea llave SSH
+RUN ssh-keygen -q -f ${SSH_KEY} -P ${PASSPHRASE}
 
 # Se corre proceso principal.
 CMD ["tail", "-f", "/dev/null"]

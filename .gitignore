@@ -5,6 +5,8 @@
 *.rsa
 *.pub
 *.pdf
+.DS_Store
+practices/ansible/.DS_Store
 resources
 Iso's
 Reto platzi con Microsoft
