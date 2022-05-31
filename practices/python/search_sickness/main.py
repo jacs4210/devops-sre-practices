@@ -19,7 +19,7 @@ results = []
 
 ## Variables
 
-# Se solicita la cantidad de sintomas al usuario.
+# Se solicita la cantidad de sintomas al usuario. 
 quantity_symptoms = int(input("Digite la cantidad de sintomas que presenta el paciente: "))
 
 # Se valida que se ingrese al menos un sintoma.
