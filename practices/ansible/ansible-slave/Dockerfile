@@ -13,6 +13,9 @@ RUN apk update && apk upgrade && apk add --no-cache openssh
 # Se define el espacio de trabajo
 WORKDIR ${HOME}
 
+# Se expone puerto ssh
+EXPOSE 22
+
 # Se cambia al usuario creado anteriormente
 USER ${US_GR_ANSIBLE}
 
