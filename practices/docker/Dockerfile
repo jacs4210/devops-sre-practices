@@ -1,3 +1,5 @@
-FROM ubuntu:latest
+FROM ubuntu:18.04
 
-RUN touch /usr/src/prueba-platzi.txt
+RUN apt-get update && apt-get upgrade -y
+
+CMD [ "/bin/bash" ]
