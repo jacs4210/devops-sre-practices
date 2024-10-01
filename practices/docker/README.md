@@ -38,3 +38,28 @@ Una vez definido el archivo *.env* se puede ejecutar el siguiente comando para l
 ```bash
 docker compose up -d
 ```
+
+Para complementar lo anterior, si se desea utilizar las llaves SSH generadas para el usuario de la maquina en la cual se va a desplegar el contenedor utilizando alguna de las alternativas anteriores se debe tener en consideración lo siguiente:
+
+1. Se debe ubicar la ruta y nombre de las llaves SSH, tanto privada como publica, las cuales son las que actualmente este utilizando con Github para este ejemplo. 
+
+2. Una vez ubicadas, se debe tener presente el nombre del contenedor, el cual está definido en el docker-compose si se fueron por la opción **2-docker-compose** o el valor que definieron en el atributo *--name* en la opción **1-only-docker**.
+
+3. Con la información anterior, por alguna alternativa que ya este ejecutandose, se debe ejecutar el script **cp-ssh-key.ssh** de la siguiente manera:
+
+```bash
+sh cp-ssh-key.sh <path_private_key> <path_public_key> <container_name>
+```
+
+Como requisitos de la ejecución del script deben tener instalado el comando **jq**. De la siguiente manera se haria de acuerdo al sistema operativo:
+
+- MacOs (Si se utiliza el gestor de paquetes *brew*)
+
+```bash
+brew install jq
+```
+
+- Linux (Ubuntu)
+```bash
+apt-get update && apt-get install jq
+```
