@@ -1,8 +1,8 @@
 ## Practicas con Docker
 
 ### Caracteristicas tecnicas utilizadas para este repositorio
-Docker version: 27.2.0, build 3ab4256
-Docker compose version: v2.29.2-desktop.2
+- Docker version: 27.2.0, build 3ab4256
+- Docker compose version: v2.29.2-desktop.2
 
 ### Utilizando solo Docker (1-only-docker)
 
