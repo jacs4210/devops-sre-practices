@@ -23,6 +23,9 @@ if [[ -f "$PT_KEY_PRIV" ]] && [[ -f "$PT_KEY_PUB" ]] && [[ "$STATE_CONTAINER" = 
     # Actualización de permisos de las llaves SSH copiadas
     docker exec $CONTAINER_NAME chown root:root -R /root/.ssh
 
+    # Ejecución de prueba de conexión ssh con Github
+    docker exec $CONTAINER_NAME ssh -T -o StrictHostKeyChecking=no git@github.com
+
     echo "[INFO] Finalización de copiado de llaves SSH"
 else
     echo "[ERROR] Verifique que los parámetros sean correctos"
