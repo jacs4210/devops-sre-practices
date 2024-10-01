@@ -1,0 +1,18 @@
+services:
+  envdev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - USER_GIT=${USER_GIT}
+        - EMAIL_GIT=${EMAIL_GIT}
+    image: envdev:1.0
+    container_name: envdev
+    networks:
+      - envdev_network
+    tty: true
+
+networks:
+  envdev_network:
+    name: envdev_network
+    driver: bridge
